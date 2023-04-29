@@ -19,7 +19,8 @@ public class ClienteService {
         return repository.save(cliente);
     }
 
-    public Optional<Cliente> getByCPF(String cpf) {
-        return repository.findByCPF(cpf);
+    public Optional<Cliente> getByCpf(String cpf) {
+        return repository.findByCpf(cpf);
     }
+
 }
