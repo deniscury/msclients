@@ -3,11 +3,12 @@ spring:
     name: msclientes
 
 server:
-  port: 0
+  port: 0 # Valor zero para que se possam rodar várias instâncias do serviço
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
   instance:
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}} # Rodar local
+    #instance-id: ${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${server.port}} # Rodar no server, pra quando tiver várias máquinas.
